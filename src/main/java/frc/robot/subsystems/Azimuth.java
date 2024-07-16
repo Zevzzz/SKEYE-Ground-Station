@@ -49,6 +49,10 @@ public class Azimuth extends SubsystemBase {
       return targetDeg;
   }
 
+  public boolean atGoal() {
+    return Math.abs(getTargetDeg() - getAngleDegHalfStep()) <= Constants.Azimuth.kAtGoalToleranceDeg;
+  }
+
 
 
   public void runAzimuthWithSlider() {

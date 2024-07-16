@@ -2,6 +2,7 @@ package frc.util;
 
 import edu.wpi.first.wpilibj.DigitalOutput;
 import edu.wpi.first.wpilibj.PWM;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class StepperMotor {
     private int currentStep = 0;
@@ -47,6 +48,8 @@ public class StepperMotor {
         for (int i = 0; i < absSteps; i++) {
             step(steps >= 0);
         }
+
+        SmartDashboard.putNumber("Steps [SM]", absSteps);
     }
 
     public int getSteps() {

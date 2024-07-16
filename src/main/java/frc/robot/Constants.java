@@ -15,24 +15,41 @@ public final class Constants {
   public static class Azimuth {
     public static final int kTicksPerRotFull = 200;
 
-    public static final int kMaxMotorOutputTPS = 8;
+    public static final int kMaxMotorOutputTPS = 2; // 8
 
     public static final double kP = 1.0;
     public static final double kI = 0.0;
     public static final double kD = 0.0;
+
+    public static final double kAtGoalToleranceDeg = 1.0;
     
   }
 
   public static class Pitch {
-    
+    // public static final double kAtGoalToleranceDeg = 0.5;
+    // bruh
+  }
+
+
+  public static class ScanningSetpoints {
+    // Azimuth, Pitch
+    public static final Double[][] setpoints = {
+      {0.0, 0.0},
+      {360.0, 15.0},
+      {0.0, 30.0},
+      {360.0, 45.0},
+      {0.0, 60.0},
+    };
+
+    public static final double kWaitTimeBeforePitchMoveSec = 0.15;
+    public static final double kWaitTimeBeforeAzimuthMoveSec = 0.5;
   }
 
 
 
   public static class Controlllers {
-    public static final int kDriverControllerPort = 0;
+    public static final int kDriverControllerPort = 1;
   }
-
 
 
   public static class RobotMap {

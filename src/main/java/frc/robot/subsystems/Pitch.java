@@ -35,6 +35,9 @@ public class Pitch extends SubsystemBase {
   }
 
 
+  // bro theres no feedback from the servo whyyyhiiawjdoijgoiawjdadodjajfawidjl
+
+
 
   public void runServoToTargetAngle() {
     servo.setAngle(targetAngleDeg);
