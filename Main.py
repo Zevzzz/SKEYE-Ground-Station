@@ -1,18 +1,27 @@
-import cv2
+
+from cv2 import circle as drawCircle
+from cv2 import putText, FONT_HERSHEY_SIMPLEX
 
 from Vision import Vision
-from cv2 import waitKey, destroyAllWindows
+from NWT import NWT
+
 
 vision = Vision(0)
+nwt = NWT()
 
 while True:
     img = vision.captureImg()
-    medX, medY, maskedImg = vision.getColorMaskedImg(img, 7)
+    medX, medY, sv, colorMaskedImg = vision.getColorMaskedImg(img, 10, 0.00000, 0.01)
 
-    imgWithMed = cv2.circle(img, (medX, medY), 5, (255, 100, 0), 5)
-    vision.showImg(imgWithMed, 'Img Med')
+    nwt.putNumber('EOS-tX', medX)
+    nwt.putNumber('EOS-tY', medY)
+    nwt.putNumber('EOS-tSV', sv)
 
-    vision.showImg(maskedImg, 'Img Masked')
+    # imgWithMed = drawCircle(img, (medX, medY), 15, (255, 150, 0), 2)
+    # putText(img, f'SV: {round(sv, 2)}',
+    #         (medX - 75, medY + 45), FONT_HERSHEY_SIMPLEX, 0.9, (255, 150, 0), 2)
+    # vision.showImg(imgWithMed, 'Img Med')
+    # vision.showImg(colorMaskedImg, 'Img Masked')
 
 
 
