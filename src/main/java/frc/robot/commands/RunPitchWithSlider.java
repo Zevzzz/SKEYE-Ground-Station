@@ -9,10 +9,10 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.Pitch;
 import frc.util.ShuffleboardIO;
 
-public class RunPitchToTarget extends Command {
+public class RunPitchWithSlider extends Command {
   /** Creates a new RunPitchToTarget. */
   Pitch pitch;
-  public RunPitchToTarget(Pitch pitch) {
+  public RunPitchWithSlider(Pitch pitch) {
     this.pitch = pitch;
     // Use addRequirements() here to declare subsystem dependencies.
   }
@@ -25,6 +25,7 @@ public class RunPitchToTarget extends Command {
   @Override
   public void execute() {
     pitch.setTargetAngleDeg(ShuffleboardIO.getDouble("Pitch Target Angle Deg [PI]"));
+    System.out.println(ShuffleboardIO.getDouble("Pitch Target Angle Deg [PI]"));
     pitch.runServoToTargetAngle();
   }
 

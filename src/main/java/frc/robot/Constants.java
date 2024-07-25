@@ -28,6 +28,10 @@ public final class Constants {
   public static class Pitch {
     // public static final double kAtGoalToleranceDeg = 0.5;
     // bruh
+    public static final double kFull90DegAngle = 67.0;
+
+    public static final double kBoundedMinDeg = 18.0;
+    public static final double kBoundedMaxDeg = 67.0;
   }
 
 
@@ -48,7 +52,7 @@ public final class Constants {
 
 
   public static class Controlllers {
-    public static final int kDriverControllerPort = 1;
+    public static final int kDriverControllerPort = 0;
   }
 
 

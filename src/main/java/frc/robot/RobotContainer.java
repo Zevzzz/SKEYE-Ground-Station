@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj2.command.ParallelCommandGroup;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.commands.RunAzimuthWithSlider;
 import frc.robot.commands.RunMotorsWithController;
-import frc.robot.commands.RunPitchToTarget;
+import frc.robot.commands.RunPitchWithSlider;
 import frc.robot.commands.RunScan;
 import frc.robot.subsystems.Azimuth;
 import frc.robot.subsystems.Pitch;
@@ -46,9 +46,9 @@ public class RobotContainer {
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
     return new ParallelCommandGroup(
-      // new RunAzimuthWithSlider(azimuth),
-      // new RunPitchToTarget(pitch),
-      new RunScan(azimuth, pitch)
+      new RunAzimuthWithSlider(azimuth),
+      new RunPitchWithSlider(pitch)
+      // new RunScan(azimuth, pitch)
       // new RunMotorsWithController(azimuth, pitch, () -> controller.getLeftX(), () -> controller.getRightY())
     );
   }

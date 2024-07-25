@@ -24,7 +24,7 @@ public class Pitch extends SubsystemBase {
    * @param angleDeg Target Angle for the Servo from -90 to 90 deg
    */
   public void setTargetAngleDeg(double angleDeg) {
-    double boundedDeg = Util.bindMinMax(angleDeg, 0.0, 65.0);
+    double boundedDeg = Util.bindMinMax(angleDeg, Constants.Pitch.kBoundedMinDeg, Constants.Pitch.kBoundedMaxDeg);
     boundedDeg += 90;
 
     targetAngleDeg = boundedDeg;
@@ -40,7 +40,11 @@ public class Pitch extends SubsystemBase {
 
 
   public void runServoToTargetAngle() {
+    // double boundedDeg = Util.bindMinMax(targetAngleDeg, Constants.Pitch.kBoundedMinDeg, Constants.Pitch.kBoundedMaxDeg);
+    // double anglePercOf90 = targetAngleDeg / 90.0;
+    // double angleScaled = anglePercOf90 * Constants.Pitch.kFull90DegAngle;
     servo.setAngle(targetAngleDeg);
+    // servo.setAngle(targetAngleDeg);
   }
 
 
