@@ -43,7 +43,11 @@ public class Azimuth extends SubsystemBase {
   }
 
   public void setTargetAngleDeg(double targetDeg) {
-    this.targetDeg = targetDeg;
+    double targetDegFiltered = targetDeg % 360;
+    if (targetDegFiltered < 0) {
+      targetDegFiltered += 360.0;
+    }
+    this.targetDeg = targetDegFiltered;
   }
   public double getTargetAngleDeg() {
       return targetDeg;

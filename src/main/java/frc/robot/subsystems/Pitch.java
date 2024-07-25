@@ -30,6 +30,12 @@ public class Pitch extends SubsystemBase {
     targetAngleDeg = boundedDeg;
   }
 
+
+  public void setTargetAngleUnbounded(double angleDeg) {
+    targetAngleDeg = Util.bindMinMax(angleDeg, Constants.Pitch.kBoundedMinDegTrack, Constants.Pitch.kBoundedMaxDegTrack);
+  }
+
+
   public double getTargetAngleDeg() {
       return targetAngleDeg;
   }

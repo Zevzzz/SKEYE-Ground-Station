@@ -38,11 +38,13 @@ public class Track extends Command {
     double tSV = SmartDashboard.getNumber("EOS-tSV", 0);
 
     if (tSV >= Constants.Vision.kMinSVForTrack) {
-      double newAzimuthTarget = azimuth.getTargetAngleDeg() + pidAzimuth.calculate(tX);
+      double newAzimuthTarget = azimuth.getTargetAngleDeg() - pidAzimuth.calculate(tX);
       azimuth.setTargetAngleDeg(newAzimuthTarget);
 
       double newPitchTarget = pitch.getTargetAngleDeg() + pidPitch.calculate(tY);
-      pitch.setTargetAngleDeg(newPitchTarget);
+      pitch.setTargetAngleUnbounded(newPitchTarget);
+
+      System.out.println(newAzimuthTarget);
     }
 
     azimuth.runToTargetAngle();

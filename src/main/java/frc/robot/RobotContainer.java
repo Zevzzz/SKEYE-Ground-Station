@@ -49,9 +49,9 @@ public class RobotContainer {
     return new ParallelCommandGroup(
       // new RunAzimuthWithSlider(azimuth),
       // new RunPitchWithSlider(pitch)
-      // new RunScan(azimuth, pitch)
+      new RunScan(azimuth, pitch)
       // new RunMotorsWithController(azimuth, pitch, () -> controller.getLeftX(), () -> controller.getRightY()),
-      new Track(azimuth, pitch)
+      // new Track(azimuth, pitch)
     );
   }
 }
