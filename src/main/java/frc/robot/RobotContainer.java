@@ -12,6 +12,7 @@ import frc.robot.commands.RunAzimuthWithSlider;
 import frc.robot.commands.RunMotorsWithController;
 import frc.robot.commands.RunPitchWithSlider;
 import frc.robot.commands.RunScan;
+import frc.robot.commands.Track;
 import frc.robot.subsystems.Azimuth;
 import frc.robot.subsystems.Pitch;
 
