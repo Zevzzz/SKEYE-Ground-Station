@@ -46,10 +46,11 @@ public class RobotContainer {
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
     return new ParallelCommandGroup(
-      new RunAzimuthWithSlider(azimuth),
-      new RunPitchWithSlider(pitch)
+      // new RunAzimuthWithSlider(azimuth),
+      // new RunPitchWithSlider(pitch)
       // new RunScan(azimuth, pitch)
-      // new RunMotorsWithController(azimuth, pitch, () -> controller.getLeftX(), () -> controller.getRightY())
+      // new RunMotorsWithController(azimuth, pitch, () -> controller.getLeftX(), () -> controller.getRightY()),
+      new Track(azimuth, pitch)
     );
   }
 }

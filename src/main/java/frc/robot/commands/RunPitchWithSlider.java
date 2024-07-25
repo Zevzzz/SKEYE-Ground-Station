@@ -26,7 +26,7 @@ public class RunPitchWithSlider extends Command {
   public void execute() {
     pitch.setTargetAngleDeg(ShuffleboardIO.getDouble("Pitch Target Angle Deg [PI]"));
     System.out.println(ShuffleboardIO.getDouble("Pitch Target Angle Deg [PI]"));
-    pitch.runServoToTargetAngle();
+    pitch.runToTargetAngle();
   }
 
   // Called once the command ends or is interrupted.

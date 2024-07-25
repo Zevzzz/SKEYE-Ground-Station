@@ -39,7 +39,7 @@ public class Pitch extends SubsystemBase {
 
 
 
-  public void runServoToTargetAngle() {
+  public void runToTargetAngle() {
     // double boundedDeg = Util.bindMinMax(targetAngleDeg, Constants.Pitch.kBoundedMinDeg, Constants.Pitch.kBoundedMaxDeg);
     // double anglePercOf90 = targetAngleDeg / 90.0;
     // double angleScaled = anglePercOf90 * Constants.Pitch.kFull90DegAngle;

@@ -49,7 +49,7 @@ public class RunScan extends Command {
     pitch.setTargetAngleDeg(pitchTarget);
 
     azimuth.runToTargetAngle();
-    pitch.runServoToTargetAngle();
+    pitch.runToTargetAngle();
 
     if (azimuth.atGoal()) {
       timer.start();      

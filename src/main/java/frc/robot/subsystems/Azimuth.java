@@ -45,12 +45,12 @@ public class Azimuth extends SubsystemBase {
   public void setTargetAngleDeg(double targetDeg) {
     this.targetDeg = targetDeg;
   }
-  public double getTargetDeg() {
+  public double getTargetAngleDeg() {
       return targetDeg;
   }
 
   public boolean atGoal() {
-    return Math.abs(getTargetDeg() - getAngleDegHalfStep()) <= Constants.Azimuth.kAtGoalToleranceDeg;
+    return Math.abs(getTargetAngleDeg() - getAngleDegHalfStep()) <= Constants.Azimuth.kAtGoalToleranceDeg;
   }
 
 

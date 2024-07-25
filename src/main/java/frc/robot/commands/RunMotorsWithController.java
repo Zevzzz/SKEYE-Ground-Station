@@ -40,11 +40,11 @@ public class RunMotorsWithController extends Command {
     joyX = Util.deadband(joyX, 0.1);
     joyY = Util.deadband(joyY, 0.1);
 
-    azimuth.setTargetAngleDeg(joystickSupplierX.get() + azimuth.getTargetDeg());
+    azimuth.setTargetAngleDeg(joystickSupplierX.get() + azimuth.getTargetAngleDeg());
     pitch.setTargetAngleDeg(joystickSupplierY.get() + pitch.getTargetAngleDeg());
 
     azimuth.runToTargetAngle();
-    pitch.runServoToTargetAngle();
+    pitch.runToTargetAngle();
   }
 
   // Called once the command ends or is interrupted.

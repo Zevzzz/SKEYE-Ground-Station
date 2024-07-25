@@ -6,9 +6,15 @@ package frc.robot;
 
 public final class Constants {
   public static class Vision {
-    public static final double kP = 1.0;
-    public static final double kI = 0.0;
-    public static final double kD = 0.0;
+    public static final double kPTrackAzimuth = 0.0;
+    public static final double kITrackAzimuth = 0.0;
+    public static final double kDTrackAzimuth = 0.0;
+
+    public static final double kPTrackPitch = 0.05;
+    public static final double kITrackPitch = 0.0;
+    public static final double kDTrackPitch = 0.0;
+
+    public static final double kMinSVForTrack = 100.0;
 
   }
 
