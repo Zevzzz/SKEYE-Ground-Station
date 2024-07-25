@@ -4,14 +4,18 @@ from cv2 import putText, FONT_HERSHEY_SIMPLEX
 
 from Vision import Vision
 from NWT import NWT
+from SerialComm import SerialComm
 
 
 vision = Vision(0)
 nwt = NWT()
+# serial = SerialComm()
 
 while True:
     img = vision.captureImg()
     medX, medY, sv, colorMaskedImg = vision.getColorMaskedImg(img, 10, 0.00000, 0.01)
+
+    # serial.putData('TEST DATA')
 
     nwt.putNumber('EOS-tX', medX)
     nwt.putNumber('EOS-tY', medY)
