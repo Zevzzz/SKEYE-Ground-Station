@@ -20,7 +20,7 @@ class NWT:
         #     exit(0)
 
         # ip = sys.argv[1]
-        ip = '10.20.7.2'
+        ip = '169.254.26.227'
 
         NetworkTables.initialize(server=ip)
 

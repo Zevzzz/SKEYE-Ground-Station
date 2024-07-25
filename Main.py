@@ -7,7 +7,7 @@ from NWT import NWT
 from SerialComm import SerialComm
 
 
-vision = Vision(0)
+vision = Vision(1)
 nwt = NWT()
 # serial = SerialComm()
 
@@ -16,9 +16,15 @@ while True:
     medX, medY, sv, colorMaskedImg = vision.getColorMaskedImg(img, 10, 0.00000, 0.01)
 
     # serial.putData('TEST DATA')
+    tX = (colorMaskedImg.shape[1] / 2) - medX
+    tY = (colorMaskedImg.shape[0] / 2) - medY
 
-    nwt.putNumber('EOS-tX', medX)
-    nwt.putNumber('EOS-tY', medY)
+    if tX == 320 and tY == 240:
+        tX = 0
+        tY = 0
+
+    nwt.putNumber('EOS-tX', tX)
+    nwt.putNumber('EOS-tY', tY)
     nwt.putNumber('EOS-tSV', sv)
 
     # imgWithMed = drawCircle(img, (medX, medY), 15, (255, 150, 0), 2)
