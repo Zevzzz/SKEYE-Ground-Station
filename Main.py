@@ -27,11 +27,13 @@ while True:
     nwt.putNumber('EOS-tY', tY)
     nwt.putNumber('EOS-tSV', sv)
 
-    # imgWithMed = drawCircle(img, (medX, medY), 15, (255, 150, 0), 2)
-    # putText(img, f'SV: {round(sv, 2)}',
-    #         (medX - 75, medY + 45), FONT_HERSHEY_SIMPLEX, 0.9, (255, 150, 0), 2)
-    # vision.showImg(imgWithMed, 'Img Med')
-    # vision.showImg(colorMaskedImg, 'Img Masked')
+    print(f'tX: {tX}\ntY:{tY}\ntSV{sv}')
+
+    imgWithMed = drawCircle(img, (medX, medY), 15, (255, 150, 0), 2)
+    putText(img, f'SV: {round(sv, 2)}',
+            (medX - 75, medY + 45), FONT_HERSHEY_SIMPLEX, 0.9, (255, 150, 0), 2)
+    vision.showImg(imgWithMed, 'Img Med')
+    vision.showImg(colorMaskedImg, 'Img Masked')
 
 
 
