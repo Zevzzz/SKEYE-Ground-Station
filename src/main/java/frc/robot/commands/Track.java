@@ -44,7 +44,7 @@ public class Track extends Command {
       double newPitchTarget = pitch.getTargetAngleDeg() + pidPitch.calculate(tY);
       pitch.setTargetAngleUnbounded(newPitchTarget);
 
-      System.out.println(newAzimuthTarget);
+      // System.out.println(newAzimuthTarget);
     }
 
     azimuth.runToTargetAngle();
