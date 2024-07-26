@@ -53,7 +53,7 @@ class Vision:
             cv2.rectangle(previewImg, (x, y), (x + w, y + h), (255, 100, 0), 2)
             cv2.putText(previewImg, f'B: {round(brightness, 2)}', (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5,
                         (0, 255, 0))
-        self.showImg(previewImg, 'preview IMg')
+        self.showImg(previewImg, 'Brightest Contour Img')
 
     def getColorMaskedImg(self, img, redThresholdHue, lowerAreaThresholdDeci, upperAreaThresholdDeci):
         # Convert the image to the HSV color space
@@ -70,7 +70,7 @@ class Vision:
         mask2 = cv2.inRange(hsv_image, lower_red2, upper_red2)
         mask = cv2.bitwise_or(mask1, mask2)
 
-        # self.showImg(mask, 'Masked no filter')
+        self.showImg(mask, 'Color Masked Img')
 
         # Apply morphological operations to remove noise
         # kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5))
@@ -100,6 +100,8 @@ class Vision:
 
         areaMask = cv2.bitwise_not(areaMask)
         areaMaskedImg = cv2.bitwise_and(binaryImg, areaMask)
+
+        self.showImg(areaMaskedImg, 'Area Filtered Img')
 
 
         # Brightest Cluster

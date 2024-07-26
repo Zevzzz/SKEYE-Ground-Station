@@ -37,9 +37,9 @@ while True:
     imgWithMed = drawCircle(img, (medX, medY), 15, (255, 150, 0), 2)
     putText(img, f'SV: {round(sv, 2)}',
             (medX - 75, medY + 45), FONT_HERSHEY_SIMPLEX, 0.9, (255, 150, 0), 2)
-    vision.showImg(imgWithMed, 'Img Med')
+    vision.showImg(imgWithMed, 'Final Median Img')
     vision.showImg(colorMaskedImg, 'Img Masked')
-    # vision.showImg(img, 'Blank Preview')
+    vision.showImg(img, 'Img Raw Preview')
 
 
 
