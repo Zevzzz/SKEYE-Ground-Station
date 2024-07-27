@@ -56,6 +56,10 @@ public class StepperMotor {
         return currentStep;
     }
 
+    public void setCurrentDeg(double deg) {
+        currentStep = Conversions.StepperDegrees2HalfTicks(deg);
+    }
+
 
 
 

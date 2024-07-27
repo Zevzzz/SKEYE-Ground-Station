@@ -38,6 +38,10 @@ public class RobotContainer {
     return controller;
   }
 
+  public void setStartingZero() {
+    azimuth.setStartingZero();
+  }
+
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.

@@ -11,4 +11,10 @@ public class Conversions {
     public static double StepperHalfTicks2Degrees(int ticks) {
         return (double) ticks / (Constants.Azimuth.kTicksPerRotFull * 2) * 360.0;
     }
+
+    public static int StepperDegrees2HalfTicks(double deg) {
+        double percRot = deg / 360.0;
+        int ticks = (int) percRot * Constants.Azimuth.kTicksPerRotFull * 2;
+        return ticks;
+    }
 }

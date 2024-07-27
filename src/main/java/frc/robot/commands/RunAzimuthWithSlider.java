@@ -25,7 +25,7 @@ public class RunAzimuthWithSlider extends Command {
   public void execute() {
     // azimuth.runAzimuthWithSlider();
     azimuth.setTargetAngleDeg((int) ShuffleboardIO.getDouble("Target Angle Azimuth [AZ]"));
-    azimuth.runToTargetAngle();
+    azimuth.runToTargetAngleScanning();
   }
 
   // Called once the command ends or is interrupted.

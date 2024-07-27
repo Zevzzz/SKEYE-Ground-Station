@@ -10,11 +10,11 @@ public final class Constants {
     public static final double kITrackAzimuth = 0.0;
     public static final double kDTrackAzimuth = 0.0;
 
-    public static final double kPTrackPitch = 0.01;
+    public static final double kPTrackPitch = 0.005;
     public static final double kITrackPitch = 0.0;
-    public static final double kDTrackPitch = 0.0005;
+    public static final double kDTrackPitch = 0.000;
 
-    public static final double kMinSVForTrackSwitch = 170.0;
+    public static final double kMinSVForTrackSwitch = 175.0;
     public static final double kMinSVForTrack = 130.0;
 
   }
@@ -22,13 +22,16 @@ public final class Constants {
   public static class Azimuth {
     public static final int kTicksPerRotFull = 200;
 
-    public static final int kMaxMotorOutputTPS = 2; // 8
+    public static final int kMaxMotorOutputTPS = 1; // 8
+    public static final int kMaxMotorOutputTPSTracking = 8; // 8
 
     public static final double kP = 1.0;
     public static final double kI = 0.0;
     public static final double kD = 0.0;
 
     public static final double kAtGoalToleranceDeg = 1.0;
+
+    public static final double kStartingDeg = 180.0;
     
   }
 
@@ -49,16 +52,9 @@ public final class Constants {
     // Azimuth, Pitch
     public static final Double[][] setpoints = {
       {0.0, 15.0},
-      {300.0, 20.0},
-      {0.0, 25.0},
-      {0.0, 30.0},
-      {300.0, 35.0},
-      {0.0, 40.0},
-      {300.0, 45.0},
-      {0.0, 50.0},
-      {300.0, 55.0},
-      {0.0, 60.0},
-      {300.0, 65.0},
+      {350.0, 30.0},
+      {0.0, 45.0},
+      {350.0, 60.0},
       {0.0, 67.0},
     };
 

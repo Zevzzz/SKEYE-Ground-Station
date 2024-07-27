@@ -31,6 +31,10 @@ public class Azimuth extends SubsystemBase {
     ShuffleboardIO.addSlider("Target Angle Azimuth [AZ]", 0, 360, 0);
   }
 
+  public void setStartingZero() {
+    stepperMotor.setCurrentDeg(Constants.Azimuth.kStartingDeg);
+  }
+
   public int getTicks() {
     return stepperMotor.getSteps();
   }
@@ -64,12 +68,22 @@ public class Azimuth extends SubsystemBase {
     stepperMotor.stepMulti((int) ShuffleboardIO.getDouble("StepsPerRun [AZ]"));
   }
 
-  public void runToTargetAngle() {
+  public void runToTargetAngleScanning() {
     int motorOutput = (int) pidController.calculate(getAngleDegHalfStep(), targetDeg);
     int motorOutputBounded = Util.bindMinMax(motorOutput, Constants.Azimuth.kMaxMotorOutputTPS);
 
     stepperMotor.stepMulti(motorOutputBounded);
   }
+
+  public void runToTargetAngleTracking() {
+    int motorOutput = (int) pidController.calculate(getAngleDegHalfStep(), targetDeg);
+    int motorOutputBounded = Util.bindMinMax(motorOutput, Constants.Azimuth.kMaxMotorOutputTPSTracking);
+
+    stepperMotor.stepMulti(motorOutputBounded);
+  }
+
+  
+  
 
   @Override
   public void periodic() {

@@ -43,7 +43,7 @@ public class RunMotorsWithController extends Command {
     azimuth.setTargetAngleDeg(joystickSupplierX.get() + azimuth.getTargetAngleDeg());
     pitch.setTargetAngleDeg(joystickSupplierY.get() + pitch.getTargetAngleDeg());
 
-    azimuth.runToTargetAngle();
+    azimuth.runToTargetAngleScanning();
     pitch.runToTargetAngle();
   }
 

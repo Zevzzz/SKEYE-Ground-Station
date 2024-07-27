@@ -43,13 +43,16 @@ public class RunScan extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    SmartDashboard.putString("System State", "Scanning");
+    SmartDashboard.putBoolean("Is Tracking?", false);
+
     double azimuthTarget = setpoints[scanStepAZ][0];
     double pitchTarget = setpoints[scanStepPI][1];
 
     azimuth.setTargetAngleDeg(azimuthTarget);
     pitch.setTargetAngleDeg(pitchTarget);
 
-    azimuth.runToTargetAngle();
+    azimuth.runToTargetAngleScanning();
     pitch.runToTargetAngle();
 
     if (azimuth.atGoal()) {

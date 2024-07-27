@@ -33,6 +33,9 @@ public class Track extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    SmartDashboard.putString("System State", "Tracking");
+    SmartDashboard.putBoolean("Is Tracking?", true);
+
     double tX = SmartDashboard.getNumber("EOS-tX", 0);
     double tY = SmartDashboard.getNumber("EOS-tY", 0);
     double tSV = SmartDashboard.getNumber("EOS-tSV", 0);
@@ -47,7 +50,7 @@ public class Track extends Command {
       // System.out.println(newAzimuthTarget);
     }
 
-    azimuth.runToTargetAngle();
+    azimuth.runToTargetAngleTracking();
     pitch.runToTargetAngle();
   }
 
